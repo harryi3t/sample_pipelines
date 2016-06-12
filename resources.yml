@@ -13,3 +13,18 @@ resources:
     source:
       name : "test-cluster" #name of the cluster we are deploying
       region: "us-west-2"
+
+  - name: myEcsParams #test once more
+    type: params
+    source:
+      params:
+        foo: bar
+        api_url: https://api.shippable.com
+
+  - name: myEcsDockerOptions
+    type: dockerOptions
+    source:
+      memory: 400
+      cpu-shares: 2
+      portMappings:
+        - 8081:80
